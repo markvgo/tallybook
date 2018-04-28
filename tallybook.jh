@@ -1,0 +1,27 @@
+entity Job {
+    startDate Instant
+}
+
+entity WorkCount {
+	quantity Double,
+    stand Number required,    
+    countout Instant required 
+}
+
+entity Worker {
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    Job{workCount} to WorkCount,
+    Worker{workCount} to WorkCount
+}
+
+// Set pagination options
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix
